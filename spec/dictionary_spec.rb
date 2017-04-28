@@ -41,5 +41,13 @@ describe(Dictionary) do
     end
   end
 
+  describe(".clear") do
+    it("empties out all of the saved words") do
+      Dictionary.new("tea").save()
+      Dictionary.clear()
+      expect(Dictionary.all()).to(eq([]))
+    end
+  end
+
 
 end
