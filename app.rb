@@ -13,20 +13,20 @@ get('/words/new') do
 end
 
 get('/words') do
-  @words = Dictionary.all()
+  @words = Word.all()
   erb(:word_definitions_form)
 end
 
 get('/wordshome') do
-  @words = Dictionary.all()
+  @words = Word.all()
   erb(:words)
 end
 
 post('/words') do
   meaning = params.fetch('meaning')
-  @word = Dictionary.new(meaning)
+  @word = Word.new(meaning)
   @word.save
-  @words = Dictionary.all()
+  @words = Word.all()
   erb(:word_definitions_form)
 end
 
@@ -36,12 +36,12 @@ get('/definitions/:id') do
 end
 
 get('/words/:id') do
-  @word = Dictionary.find(params.fetch('id').to_i())
+  @word = Word.find(params.fetch('id').to_i())
   erb(:word)
 end
 
 get('/words/:id/definitions/new') do
-    @word = Dictionary.find(params.fetch('id').to_i())
+    @word = Word.find(params.fetch('id').to_i())
     erb(:word_definitions_form)
 end
 get('/definitions') do
@@ -57,7 +57,7 @@ post('/definitions') do
   meaning = params.fetch('meaning')
   @definition = Definition.new(meaning)
   @definition.save()
-  @word = Dictionary.find(params.fetch('word_id').to_i())
+  @word = Word.find(params.fetch('word_id').to_i())
   @word.add_definition(@definition)
   erb(:confirmation)
 end

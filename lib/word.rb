@@ -1,4 +1,4 @@
-class Dictionary
+class Word
   @@words = []
 
   define_method(:initialize) do |word|
