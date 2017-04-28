@@ -1,39 +1,47 @@
-class Definition
-  @@definitions = []
+class Word
+  @@words = []
 
-  define_method(:initialize) do |meaning|
-    @meaning = meaning
-    @id = @@definitions.length().+(1)
+  define_method(:initialize) do |word|
+    @word = word
+    @id = @@words.length().+(1)
+    @definitions = []
+  end
+
+  define_method(:word) do
+    @word
   end
 
   define_method(:id) do
     @id
   end
 
-  define_method(:meaning) do
-    @meaning
+  define_method(:definitions) do
+    @definitions
   end
 
   define_singleton_method(:all) do
-    @@definitions
+    @@words
   end
 
   define_method(:save) do
-    @@definitions.push(self)
+    @@words.push(self)
   end
 
   define_singleton_method(:clear) do
-    @@definitions = []
+    @@words = []
   end
 
-  define_singleton_method(:find) do |identification|
-    found_definition = nil
-    @@definitions.each() do |definition|
-      if definition.id().eql?(identification.to_i())
-        found_definition = definition
+  define_singleton_method(:find) do |id|
+    found_word = nil
+    @@words.each() do |word|
+      if word.id().eql?(id)
+        found_word = word
       end
     end
-    found_definition
+    found_word
+  end
+  define_method(:add_definition) do |definition|
+    @definitions.push(definition)
   end
 
 end
