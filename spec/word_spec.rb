@@ -1,5 +1,5 @@
 require('rspec')
-require('dictionary')
+require('word')
 
 describe(Dictionary) do
   before() do
