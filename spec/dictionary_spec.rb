@@ -24,5 +24,13 @@ describe(Dictionary) do
     end
   end
 
+  describe("#save") do
+    it("adds a word to the array of saved words") do
+      test_dictionary = Dictionary.new("tea")
+      test_dictionary.save()
+      expect(Dictionary.all()).to(eq([test_dictionary]))
+    end
+  end
+
 
 end
