@@ -10,8 +10,13 @@ class Dictionary
   define_method(:word) do
     @word
   end
+
   define_method(:id) do
     @id
+  end
+
+  define_method(:definitions) do
+    @definitions
   end
 
 end

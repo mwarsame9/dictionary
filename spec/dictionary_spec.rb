@@ -17,5 +17,12 @@ describe(Dictionary) do
     end
   end
 
+  describe('#definitions') do
+    it("initially returns an empty array of definitions for the word") do
+      test_dictionary = Dictionary.new("tea")
+      expect(test_dictionary.definitions()).to(eq([]))
+    end
+  end
+
 
 end
