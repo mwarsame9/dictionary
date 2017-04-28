@@ -1,0 +1,18 @@
+body {
+  background-color: #244F26;
+  color: yellow;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+ul {
+  font-size: 30px;
+}
+
+a {
+  color: red;
+  text-shadow: 50%;
+  padding-right: 30px;
+}
