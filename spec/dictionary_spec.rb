@@ -2,6 +2,9 @@ require('rspec')
 require('dictionary')
 
 describe(Dictionary) do
+  before() do
+    Dictionary.clear()
+  end
 
   describe('#word') do
     it("returns the word entered in to the dictionary") do
@@ -29,6 +32,12 @@ describe(Dictionary) do
       test_dictionary = Dictionary.new("tea")
       test_dictionary.save()
       expect(Dictionary.all()).to(eq([test_dictionary]))
+    end
+  end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Dictionary.all()).to(eq([]))
     end
   end
 
