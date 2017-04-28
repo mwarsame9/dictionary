@@ -49,5 +49,15 @@ describe(Dictionary) do
     end
   end
 
+  describe(".find") do
+    it("returns a word by its id number") do
+      test_word = Dictionary.new("tea")
+      test_word.save()
+      test_word2 = Dictionary.new("coffee")
+      test_word2.save()
+      expect(Dictionary.find(test_word.id())).to(eq(test_word))
+    end
+  end
+
 
 end
