@@ -8,6 +8,8 @@
 
 Program will allow user to input and store words and their definitions. Words can have multiple definitions and the definitions can be added anytime after a word is created. The program will display all the words it has stored and will also display all the definitions of a word once that word is clicked.
 
+Project url on Heroku: https://blooming-river-72797.herokuapp.com/
+
 ## Specifications
 
 | Behavior | Input | Output |
